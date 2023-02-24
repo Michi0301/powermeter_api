@@ -1,0 +1,94 @@
+{
+  "result": {
+    "auth": {
+      "vehicles": {}
+    },
+    "battery": [
+      {
+        "power": -36,
+        "soc": 73,
+        "capacity": 0
+      }
+    ],
+    "batteryCapacity": 0,
+    "batteryConfigured": true,
+    "batteryPower": 1234,
+    "batterySoc": 73,
+    "bufferSoc": 51,
+    "currency": "EUR",
+    "gridConfigured": true,
+    "gridCurrents": [
+      10.243,
+      -4.956,
+      -5.081
+    ],
+    "gridEnergy": 3023.3719,
+    "gridPower": 8.9,
+    "gridPowers": [
+      2412.4,
+      -1178,
+      -1225.5
+    ],
+    "homePower": 373.9000000000001,
+    "loadpoints": [
+      {
+        "chargeCurrent": 16,
+        "chargeCurrents": [
+          14.3,
+          0,
+          0
+        ],
+        "chargeDuration": 1571000000000,
+        "chargePower": 3260,
+        "chargeTotalImport": 1647,
+        "chargeVoltages": [
+          222,
+          225,
+          229
+        ],
+        "chargedEnergy": 5689.099999999999,
+        "charging": true,
+        "connected": true,
+        "connectedDuration": 0,
+        "enabled": true,
+        "maxCurrent": 16,
+        "minCurrent": 6,
+        "minSoc": 0,
+        "mode": "pv",
+        "phaseAction": "inactive",
+        "phaseRemaining": 0,
+        "phasesActive": 1,
+        "phasesConfigured": null,
+        "phasesEnabled": 3,
+        "planActive": false,
+        "pvAction": "inactive",
+        "pvRemaining": 0,
+        "targetSoc": 100,
+        "title": "CarPort",
+        "vehicleDetectionActive": false
+      }
+    ],
+    "prioritySoc": 49,
+    "pv": [
+      {
+        "power": 3661
+      }
+    ],
+    "pvConfigured": true,
+    "pvPower": 3661,
+    "residualPower": 0,
+    "savingsAmount": 1.0547021942056303,
+    "savingsEffectivePrice": 0.08153364417396979,
+    "savingsGridCharged": 0.03341000792805124,
+    "savingsSelfConsumptionCharged": 4.759601851829803,
+    "savingsSelfConsumptionPercent": 99.3029433494926,
+    "savingsSince": "2023-02-17T15:15:17+01:00",
+    "savingsTotalCharged": 4.793011859757854,
+    "siteTitle": "site_title",
+    "sponsor": "sponsor_name",
+    "tariffFeedIn": 0.08,
+    "tariffGrid": 0.3,
+    "vehicles": [],
+    "version": "0.112.5"
+  }
+}

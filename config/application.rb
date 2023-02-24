@@ -23,5 +23,8 @@ module PowermeterApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Custom
+    config.evcc_api = ENV.fetch("EVCC_API", "http://localhost:7070/api")
   end
 end

@@ -28,4 +28,7 @@ curl localhost:3000/dashboards
 => {"current_power":123.0,"status":"CHARGING"}
 ```
 
-More to come...
+## Configuration options
+Canfiguration via ENV.
+
+- EVCC_API, default: "http://localhost:7070/api"
