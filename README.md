@@ -1,24 +1,32 @@
-# README
+# Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Install RVM -> rvm.io
+- Docs: https://guides.rubyonrails.org/
 
-Things you may want to cover:
+## Install Ruby 3.2.1
+```
+rvm install 3.2.1
+```
 
-* Ruby version
+## Clone Repo & install
+```
+git clone
+cd powermeter_api
+bundle install
+```
 
-* System dependencies
+# Start server
+```
+rails s -p 3000
+```
 
-* Configuration
+## Test the api
+```
+curl localhost:3000/dashboards
+```
 
-* Database creation
+```
+=> {"current_power":123.0,"status":"CHARGING"}
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+More to come...
