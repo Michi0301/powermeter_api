@@ -1,7 +1,6 @@
 # Readme
 
 - Install RVM -> rvm.io
-- Docs: https://guides.rubyonrails.org/
 
 ## Install Ruby 3.2.1
 ```
@@ -10,7 +9,7 @@ rvm install 3.2.1
 
 ## Clone Repo & install
 ```
-git clone
+git clone https://github.com/Michi0301/powermeter_api.git
 cd powermeter_api
 bundle install
 ```
