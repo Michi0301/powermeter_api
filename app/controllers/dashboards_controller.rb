@@ -10,7 +10,7 @@ class DashboardsController < ApplicationController
 
   def fetch_remote_data
     # Cache value per request
-    @remote_data = EvccClient.new.state
+    @remote_data ||= EvccClient.new.state
 
     if @remote_data.success?
       @remote_data
