@@ -21,7 +21,12 @@ RSpec.describe "Dashboard api", type: :request do
       expect(response.body).to eq({  
         "state": "SUCCESS",
         "values": {
-          "battery_power": 1234
+          "battery_power": 1234,
+          "battery_soc": 73,
+          "charge_power": 3260,
+          "grid_power": 8.9,
+          "home_power": 373.9000000000001,
+          "pv_power": 3661
         }
       }.to_json)
     end
