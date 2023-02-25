@@ -3,12 +3,12 @@ class DashboardsController < ApplicationController
 
   # GET /dashboards
   def index
-      render json: dashboard
+      render json: Dashboard.new(remote_data).serialize
   end
 
  private
 
-  def fetch_remote_data
+  def remote_data
     # Cache value per request
     @remote_data ||= EvccClient.new.state
 
@@ -17,16 +17,6 @@ class DashboardsController < ApplicationController
     else
       raise RemoteError
     end
-  end
-
-  def dashboard
-    # Pick values from response as required
-    { 
-      state: "SUCCESS",
-      values: {
-        battery_power: fetch_remote_data.dig("result", "batteryPower")
-      }
-    }
   end
 
   def render_error(error)
