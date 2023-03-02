@@ -45,3 +45,14 @@ Response:
   "battery_power": 1234
 }
 ```
+
+## Docker
+### Build Image
+```
+docker build .
+````
+
+### Run in Production Mode
+```
+docker run -p <host port>:3000 -e RAILS_ENV=production <image id>
+```
