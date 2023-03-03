@@ -7,17 +7,15 @@ RSpec.describe "Dashboard api", type: :request do
 
       stub_request(:get, "http://localhost:7070/api/state")
         .to_return(status: 200, body: resonse_body)
+
+      get "/dashboards", params: {}, headers: { "Authorization" => "Bearer change-me" }
     end
 
     it "Responds with a 200 HTTP code" do
-      get "/dashboards"
-
       expect(response.status).to eq(200)
     end
 
     it "Responds with a proper json document" do
-      get "/dashboards"
-
       expect(response.body).to eq({  
         "state": "SUCCESS",
         "values": {
@@ -32,25 +30,37 @@ RSpec.describe "Dashboard api", type: :request do
     end
   end
 
-  context "Error" do
+  context "Remote error" do
     before do
       stub_request(:get, "http://localhost:7070/api/state")
         .to_return(status: 500, body: "")
+
+      get "/dashboards", params: {}, headers: { "Authorization" => "Bearer change-me" }
     end
 
     it "Responds with a 500 HTTP code" do
-      get "/dashboards"
-
       expect(response.status).to eq(500)
     end
 
     it "Responds with a meaningful message" do
-      get "/dashboards"
-
       expect(response.body).to eq({  
         "state": "ERROR",
         "message": "An error occured fetching data from server."
       }.to_json)
+    end
+  end
+
+  context "Insufficient authentication" do
+    it "Responds with a 500 HTTP code with wrong api token" do
+      get "/dashboards", params: {}, headers: { "Authorization" => "Bearer wrong" }
+
+      expect(response.status).to eq(401)
+    end
+
+    it "Responds with a 500 HTTP code with missing api token" do
+      get "/dashboards", params: {}, headers: { "Authorization" => "" }
+
+      expect(response.status).to eq(401)
     end
   end
 end

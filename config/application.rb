@@ -1,4 +1,5 @@
 require_relative "boot"
+require_relative "../lib/middleware/api_token_validator"
 
 require "rails/all"
 
@@ -25,6 +26,9 @@ module PowermeterApi
     config.api_only = true
 
     # Custom
+    Rails.application.config.middleware.insert_after Rails::Rack::Logger, Middleware::ApiTokenValidator
+
     config.evcc_api = ENV.fetch("EVCC_API", "http://localhost:7070/api")
+    config.api_token = ENV.fetch("API_TOKEN", "change-me")
   end
 end

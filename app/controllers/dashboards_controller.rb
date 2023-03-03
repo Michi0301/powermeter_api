@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
 
   # GET /dashboards
   def index
-      render json: Dashboard.new(remote_data).serialize
+    render json: Dashboard.new(remote_data).serialize
   end
 
  private
